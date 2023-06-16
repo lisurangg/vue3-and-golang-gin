@@ -1,0 +1,44 @@
+.el-header{
+    background-color: #ffffff;
+    display: flex; 
+    justify-content: space-between;
+    padding-left: 0;
+    align-items: center;
+    color: #000000;
+    font-size: 20px;
+    > div {
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 60px;
+        }
+    };
+    
+}
+
+.el-aside{
+    background-color: #ffffff;
+}
+ .el-main{
+    background-color: #ffffff;
+ }
+
+ .el-submenu__title:hover, .el-menu-item:focus, .el-menu-item:hover{
+    background-color: rgb(145, 150, 149);
+    }
+
+.el-button{
+    
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background-color: #4299e1;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    line-height: 26px;
+
+}

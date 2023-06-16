@@ -1,0 +1,81 @@
+首先router得使用router4
+版本错误
+
+其次现在问题是跳转了路由，但是页面没有跳转
+可能是页面没有注册
+
+第一种方法是
+先引用router
+import router from "@/router"
+然后用这个方法
+router.push('login')
+
+！！！第一种方法正确，只是在APP.vue里的首页引用方法错误，已在下面更改
+
+第二中方法是  //此方法在浏览器收藏夹
+先引用
+import { useRouter } from "vue-router";
+然后定义router变量
+const router = useRouter()
+然后再调用方法
+// 字符串
+router.push('home')
+ 
+// 对象
+router.push({ path: 'home' })
+ 
+// 命名的路由
+router.push({ name: 'user', params: { userId: '123' }})
+ 
+// 带查询参数，变成 /register?userId=123
+router.push({ path: 'register', query: { userId: '123' }})
+
+
+首页方法是
+1、引用
+在APP.vue里的<script></script>标签内引用首页vue组件
+import home from './components/home.vue'
+
+2、注册
+在APP.vue里的<script></script>标签内注册首页component（组件）
+export default {
+  name: 'App',
+  components: {
+    home  //  路由
+  },
+}
+
+3、使用
+最重要的在APP.vue文件中的<template></template>标签内使用首页组件
+<template>
+    <home/>  //	这是我的首页组件，home是component还是path或者是name还有待测试，  大概率是component
+</template>
+
+
+
+！！！首页方法
+使用路由方式
+把APP.vue里的home标签删除
+<template>
+    <home/>  //	这是我的首页组件，home是component还是path或者是name还有待测试，  大概率是component
+</template>
+加入这个标签
+    <router-view></router-view>  //在这个标签里显示路由内容，加入标签外部还有别的组件的话，是不会消失的
+不需要引入组件
+不需要注册首页component（组件）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
